@@ -1,10 +1,127 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Punit Sharma</title>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Character Count Word Count Online</title>
+
+<meta name="title" content="Character Count Word Count Online">
+<meta name="description" content="Character Counter is a free tool in your toolbox. It provides the facility of Character Count and Word Count Online.">
+<meta name="keywords" content="character count, character counter, character counter online, character count online, word count online, letter count, word count tool, word count characters, word count checker, word count in pages, word count on pages, word count website">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+
+<style>
+table.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+#tb {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #009933;
+  color:white;
+}
+#tb td, #tb th {
+  border: 1px solid #ddd;
+  padding: 0px;
+}
+#tb tr:{}
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		 var txt = document.getElementById('textcontent');
+		 var showWordCount   = document.getElementById('countWord');
+		 var showCountLetter = document.getElementById('countLetter');
+		 var showCountSentences = document.getElementById('countSentences');
+		 var showCountSpace = document.getElementById('countSpace');
+		 
+		 function count_word( val ){
+			var wom = val.match(/\S+/g);
+			return {
+				words : wom ? wom.length : 0
+			};
+		}
+		
+		function count_char(str) {
+		 var letter_Count = 0;
+			 for (var position = 0; position < str.length; position++) 
+			 {
+				  letter_Count += 1;
+			 }
+		  return letter_Count;
+		}
+		
+		function count_char_without_space(str) {
+		 var letter_Count = 0;
+			 for (var position = 0; position < str.length; position++) 
+			 {
+				  if(str.charAt(position)!=' ')
+				  letter_Count += 1;
+			 }
+		  return letter_Count;
+		}
+		
+		function countSent(str) {
+			var senten = str.match(/[\w|\)][.?!](\s|$)/g);
+			return {
+				w : senten ? senten.length : 0
+			};
+		}
+		
+		txt.addEventListener('input', function(){
+		  var v = count_word( this.value );
+		  showWordCount.innerHTML = (
+			  "Words : "+ v.words
+		  );
+		}, false);
+		
+		txt.addEventListener('input', function(){
+		  var x = count_char( this.value );
+		  showCountLetter.innerHTML = (
+			  "Characters : "+ x
+		  );
+		}, false);
+		
+		txt.addEventListener('input', function(){
+		  var x = countSent( this.value );
+		  showCountSentences.innerHTML = (
+			  "Sentences : "+ x.w
+		  );
+		}, false);
+		
+		txt.addEventListener('input', function(){
+			var x = count_char_without_space( this.value );
+			showCountSpace.innerHTML = (
+			  "Without Spaces Characters : "+ x
+		  );
+		}, false);
+		
+	};
+</script>
 </head>
-
-<body>
-<h1> Punit Sharma </h1>
-
-</body></html>
+<body >
+    <div style="text-align:center;">
+	<h1 style = "font-family:georgia,garamond,serif;">Character Counter</h1>
+       <textarea id="textcontent" style="width: 600px; height: 400px;">Type your text here..</textarea>
+	   <table align="center" style="width:607px;" id="tb">
+		   <tr>
+			   <td style="width:50%;">
+				<h5><div id="countWord">Words : 0</div></h5>
+			   </td>
+			   <td style="width:50%;">
+				<h5><div id="countLetter">Characters : 0</div></h5>
+			   </td>
+		   </tr>
+		    <tr>
+			   <td style="width:50%;">
+				<h5><div id="countSentences">Sentences : 0</div></h5>
+			   </td>
+			   <td style="width:50%;">
+				<h5><div id="countSpace">Without Spaces Characters : 0</div></h5>
+			   </td>
+		   </tr>
+	   </table>
+    </div>
+</body>
+</html>
