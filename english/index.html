@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>Hindi Typing Online </title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div style="text-align:center;">
+	<h1> Hindi Typing Online </h1>
+	<br />
+	 <label for="difficuty">Choose Difficulty Level :</label>
+		<select name="difficuty" id="difficuty" onchange="setPara()">
+		  <option value="Easy">Easy</option>
+		  <option value="Medium">Medium</option>
+		  <option value="Hard">Hard</option>
+		  <option value="Editorial">Editorial</option>
+		</select> 
+	 <br />
+	 <br />
+	 <script src="script.js"></script>
+	 <label for="paragraph">Choose Paragraph :</label>
+		<select name="paragraph" id="paragraph">
+		<option value="easy1">Easy Text1</option>
+		<option value="easy2">Easy Text2</option>
+		</select> 
+	 <br />
+	 <br />
+	 <label for="time">Choose Time :</label>
+		<select name="time" id="time">
+		<option value="1">1 Minute</option>
+		<option value="2">2 Minute</option>
+		<option value="5">5 Minute</option>
+		<option value="10">10 Minute</option>
+		<option value="20">20 Minute</option>
+		</select> 
+	 <br />
+	 <br />
+	  <button type="button" onclick="proceed()" class="corebutton">Proceed</button> &nbsp;
+	  <button type="button" onclick="reset()" class="corebutton">Reset</button> 
+	</div>
+</body>
+</html>
