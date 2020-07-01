@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Simple Speed Typer</title>
+<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" >
+	  function preventBack(){window.history.forward();}
+		setTimeout("preventBack()", 0);
+		window.onunload=function(){null};
+	</script>
+
+</head>
+<body>
+<!--div class="hinditext">lkoZtfud izU;kl efUnj Jh egkdkys'oj</div-->
+<div align=center>
+<h1><div id="timer" class="timer"></div></h1>
+<div id="stats">
+	<table>
+	<tr>
+	<td>
+		<h1><div class="stats" id="wpm">WPM<br />0.00</div></h1>
+	</td>
+	<td>
+		<h1><div class="stats" id="nwpm">NWPM<br />0.00</div></h1>
+	</td>
+	<td>
+		<h1><div class="stats" id="accuracy">Accuracy<br />0.00</div></h1>
+	</td>
+	<td>
+		<h1><div class="stats" id="errors">Errors<br />0</div></h1>
+	</td>
+	</tr>
+	</table>
+</div>
+<div class="originalText" id="matter" ></div>
+<textarea class="input_area" onfocus="startClock()" placeholder="" onkeypress="return myKeyPress(event)" onkeydown="return myKeyDown(event)" id="txtbox"></textarea>
+<br />
+	 <button type="button" onclick="submit()" class="corebutton">Submit</button> &nbsp;
+	 <button type="button" onclick="reset()" class="corebutton">Reset</button> 
+<!--div class="stats" id="label" ></div-->
+</div>
+<script src="coreengine.js"></script>
+</body>
+</html>
