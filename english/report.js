@@ -54,7 +54,7 @@ function setText(){
 	//alert(splittedUserText.length);
 	for (i = 0; i < splittedUserText.length; i++) {
 		if(wrong.has(i+""))
-		document.getElementById('errorText').innerHTML += "<font color=\"red\">"+splittedUserText[i]+"] </font> ";
+		document.getElementById('errorText').innerHTML += "<font color=\"red\">"+splittedUserText[i]+", </font> ";
 	}
 	
 	//document.getElementById('errorText').innerHTML += "</font>";
